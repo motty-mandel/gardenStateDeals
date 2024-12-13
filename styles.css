@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f3b57;
+    padding: 15px;
+    color: white;
+    text-align: center;
+
+    & > div img {
+        display: none;
+    }
+}
+
+header div a {
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#hero {
+    background-color: rgb(31, 59, 87);
+    background-image: url('warehouse-cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+}
+
+section {
+    padding: 20px;
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+
+    & > #about {
+        width: 40%;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    & > #est{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+        color: rgb(70, 125, 180);
+        padding: 0 30px;
+        border: solid;
+    }
+}
+
+.inventory {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    & > #inventory {
+        width: 40%;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    & > #est{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(70, 125, 180);
+        padding: 20px;
+        border: solid;
+    }
+}
+
+.industry {  
+    width: 100%;
+
+    & > #industries {
+        width: 50%;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    & > #industries ul li strong {
+        font-size: xx-large;
+    }
+}
+
+.industry {
+    background-color: #d8d8d8;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Center the grid items horizontally */
+    align-items: center; /* Center the grid items vertically */
+}
+
+#industries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#industries h2 {
+    grid-column: span 3;
+    text-align: center;
+}
+
+#industries p:first-of-type {
+    grid-column: span 3;
+}
+
+#industries ul {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#industries ul li {
+    margin: 0 20px 10px;
+}
+
+#industries p:last-of-type {
+    grid-column: span 3;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+}
