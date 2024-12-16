@@ -43,6 +43,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: unset;
+    }
+
+    header .links {
+        position: unset;
     }
 
     header div:first-of-type {
@@ -50,9 +55,10 @@
         flex-direction: column;
         align-items: flex-start;
     }
-
-    header div img {
-        display: block;
-        height: 100px;
+    
+    .main-popup {
+        left: 9%;
+        top: 5%;
+        width: 80%;
     }
 }

@@ -11,15 +11,18 @@
 
 <body>
     <header>
-        <div>
+        <div class="links">
             <a href="#about">About Us</a>
             <a href="#inventory">Inventory Management</a>
             <a href="#login">Customer Login</a>
             <a href="#contact">Contact Us</a>
         </div>
-        <div>
-            <img src="./garden-state-deals-logo.jpeg" alt="gardenStateDealsLogo">
+        <div class="login">
+            <button type="button" onclick="getForm()">Login</button>
         </div>
+        <!-- <div>
+            <img src="./garden-state-deals-logo.jpeg" alt="gardenStateDealsLogo">
+        </div> -->
     </header>
 
     <section id="hero">
@@ -109,26 +112,29 @@
         </section>
     </div>
 
-    <div class="main-connection2">
+    <div id="overlay" class="overlay"></div>
+
+    <div class="main-popup" id="popup">
+        <p onclick="hideForm()">X</p>
+        <div class="user">
+            <label for="username">Customer-id:</label>
+            <input type="text" id="username">
+        </div>
+        <div class="pass">
+            <label for="password">Password:</label>
+            <input type="text" id="password">
+        </div>
+        <div class="submit">
+            <button type="submit" id="submit">Submit</button>
+        </div>
+        <h3>Don't have an account? Reach out to apply.</h3>
     </div>
-
-    <section id="login">
-        <h2>Customer Login</h2>
-        <p>Access to the Garden State Deals portal is exclusively for our approved commercial customers. Our portal
-            offers secure access to our inventory, exclusive pricing, and dedicated support tailored for our trusted
-            clients. <br>
-            Interested in partnering with us? Please reach out to discuss how we can support your business
-            needs. <a href="#contact">Contact Us</a> to learn more about becoming an approved customer.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Interested in becoming a customer? Reach out to discuss partnership options.</p>
-    </section>
 
     <footer>
         <p>&copy; 2024 Garden State Deals. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

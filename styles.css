@@ -9,12 +9,20 @@
 }
 
 body {
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+.blurred {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
 header {
+    display: flex;
+    position: relative;
     background-color: var(--main-color-blue);
     padding: 15px;
     color: white;
@@ -25,10 +33,28 @@ header {
     }
 }
 
-header div a {
+header .links {
+    position: absolute;
+    left: 37%;
+    top: 35%;
+}
+
+header .links a {
     color: aliceblue;
     padding: 5px;
     text-decoration: none;
+}
+
+header .login button {
+    border: solid 2px rgb(70, 125, 180);
+    background: transparent;
+    color: white;
+    font-size: large;
+}
+
+header .login button:active {
+    border: solid 2px white;
+    color: rgb(70, 125, 180);
 }
 
 #hero {
@@ -153,23 +179,73 @@ section {
     text-align: center;
 }
 
-.main-connection2 {
-    height: 20px;
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, #d8d8d8, var(--main-color-blue))
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
-#login {
+.main-popup {
+    z-index: 2;
+    position: absolute;
+    top: 8%;
+    left: 39.7%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    height: 500px;
+    background-color: var(--main-color-blue);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.main-popup p {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+}
+
+.main-popup div {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    font-size: large;
-    background-color: var(--main-color-blue);
-    color: aliceblue;
+    width: 100%;
 }
 
-#login p a {
-    color: aliceblue;
+.main-popup div label {
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+
+.main-popup div input {
+    height: 35px;
+    border-radius: 5px;
+}
+
+.main-popup .submit {
+    width: 40%;
+}
+
+.main-popup .submit button {
+    height: 40px;
+    border: solid 2px rgb(70, 125, 180);
+    background: transparent;
+    color: white;
+}
+
+.main-popup .submit button:active {
+    border: solid 2px black;
+    color: rgb(70, 125, 180);
 }
 
 footer {
@@ -180,3 +256,4 @@ footer {
     position: relative;
     bottom: 0;
 }
+
