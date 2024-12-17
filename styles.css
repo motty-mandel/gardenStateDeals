@@ -192,7 +192,8 @@ section {
     z-index: 1;
 }
 
-.main-popup {
+.main-popup,
+.create-account {
     z-index: 2;
     position: absolute;
     top: 8%;
@@ -209,43 +210,55 @@ section {
     border-radius: 5px;
 }
 
-.main-popup p {
+.main-popup p,
+.create-account p {
     position: absolute;
     top: 0;
     right: 20px;
     cursor: pointer;
 }
 
-.main-popup div {
+.main-popup div,
+.create-account div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.main-popup div label {
+.main-popup div label,
+.create-account div label {
     font-size: xx-large;
     margin-bottom: 20px;
 }
 
-.main-popup div input {
+.main-popup div input,
+.create-account div input {
     height: 35px;
     border-radius: 5px;
 }
 
-.main-popup .submit {
+.main-popup .submit,
+.create-account .submit {
     width: 40%;
 }
 
-.main-popup .submit button {
+.main-popup .submit button,
+.create-account .submit button {
     height: 40px;
     border: solid 2px rgb(70, 125, 180);
     background: transparent;
     color: white;
 }
 
-.main-popup .submit button:active {
+.main-popup .submit button:active,
+.create-account .submit button:active {
     border: solid 2px black;
     color: rgb(70, 125, 180);
+}
+
+.main-popup h3 strong {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 footer {

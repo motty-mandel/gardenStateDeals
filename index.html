@@ -117,7 +117,7 @@
     <div class="main-popup" id="popup">
         <p onclick="hideForm()">X</p>
         <div class="user">
-            <label for="username">Customer-id:</label>
+            <label for="username">Customer ID:</label>
             <input type="text" id="username">
         </div>
         <div class="pass">
@@ -127,7 +127,22 @@
         <div class="submit">
             <button type="submit" id="submit">Submit</button>
         </div>
-        <h3>Don't have an account? Reach out to apply.</h3>
+        <h3>Don't have an account? <strong onclick="createAccount()">Reach out to apply.</strong></h3>
+    </div>
+
+    <div class="create-account" id="create-account">
+        <p onclick="goBack()">Back</p>
+        <div class="user">
+            <label for="username">Name:</label>
+            <input type="text" id="username">
+        </div>
+        <div class="pass">
+            <label for="password">Email:</label>
+            <input type="text" id="password">
+        </div>
+        <div class="submit">
+            <button type="submit" id="create-account-btn">Apply</button>
+        </div>
     </div>
 
     <footer>
