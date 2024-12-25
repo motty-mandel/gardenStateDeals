@@ -7,6 +7,45 @@
     <title>Garden State Deals</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stylesMobile.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "K4sVp1R5giOA_vyxm",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_bgkimz8', 'template_irpu8v2', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        alert('Message sent successfully');
+                        clearInputs();
+                        document.getElementById('create-account').style.display = 'none';
+                        document.getElementById('popup').style.display = 'none';
+                        document.getElementById('overlay').style.display = 'none';
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+
+        function clearInputs() {
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('address');
+            const message = document.getElementById('contact-info');
+
+            name.value = "";
+            email.value = "";
+            message.value = "";
+        }
+    </script>
 </head>
 
 <body>
@@ -18,7 +57,7 @@
             <a href="#contact">Contact Us</a>
         </div>
         <div class="login">
-            <button type="button" onclick="getForm()">Login</button>
+            <button type="button" onclick="getForm()">Customer login</button>
         </div>
         <!-- <div>
             <img src="./garden-state-deals-logo.jpeg" alt="gardenStateDealsLogo">
@@ -131,18 +170,34 @@
     </div>
 
     <div class="create-account" id="create-account">
+
         <p onclick="goBack()">Back</p>
-        <div class="user">
-            <label for="username">Name:</label>
-            <input type="text" id="username">
-        </div>
-        <div class="pass">
-            <label for="password">Email:</label>
-            <input type="text" id="password">
-        </div>
-        <div class="submit">
-            <button type="submit" id="create-account-btn">Apply</button>
-        </div>
+
+        <form id="contact-form">
+
+            <input type="hidden" name="contact_number" value="697483">
+
+            <div class="name">
+                <label for="name">Business Name:</label>
+                <input type="text" name="user_name" id="name">
+            </div>
+            <div class="address">
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address">
+            </div>
+            <div class="contact">
+                <label for="contact-info">Contact Info:</label>
+                <input type="text" name="user_email" id="contact-info">
+            </div>
+
+            <div class="submit">
+                <input type="submit" value="Send">
+            </div>
+
+            <div class="success">
+                <p>Successfully submitted!</p>
+            </div>
+        </form>
     </div>
 
     <footer>
