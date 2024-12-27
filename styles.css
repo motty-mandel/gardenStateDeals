@@ -50,11 +50,13 @@ header .login button {
     background: transparent;
     color: white;
     font-size: large;
+    box-shadow: 2px 2px white;
+    transition: ease-in-out 50ms;
 }
 
 header .login button:active {
-    border: solid 2px white;
-    color: rgb(70, 125, 180);
+    transform: translate(2px, 2px);
+    box-shadow: none;
 }
 
 #hero {
@@ -95,7 +97,20 @@ section {
         color: rgb(70, 125, 180);
         padding: 0 30px;
         border: solid;
+        cursor: default;
+        box-shadow: 4px 4px rgb(70, 125, 180);
+        transition: ease-in-out 200ms;
+
+        & > h1 {
+            color: black;
+        }
     }
+}
+
+.about #est:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+    transition: ease-in-out 200ms;
 }
 
 .inventory {
@@ -119,7 +134,15 @@ section {
         color: rgb(70, 125, 180);
         padding: 20px;
         border: solid;
+        box-shadow: 4px 4px rgb(70, 125, 180);
+        transition: ease-in-out 200ms;
     }
+}
+
+.inventory #est:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+    transition: ease-in-out 200ms;
 }
 
 .main-connection1 {
@@ -131,19 +154,13 @@ section {
 .industry {
     width: 100%;
     background-color: #d8d8d8;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
     padding: 20px;
     justify-items: center;
-    align-items: center;
 }
 
 #industries {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    width: 50%;
+    gap: 40px;
+    width: 60%;
     font-size: x-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -151,19 +168,22 @@ section {
 #industries h2 {
     grid-column: span 3;
     text-align: center;
+    margin-bottom: 70px;
 }
 
 #industries p:first-of-type {
     grid-column: span 3;
+    margin-bottom: 70px;
 }
 
 #industries ul {
     grid-column: span 3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 100px;
     list-style-type: none;
     padding: 0;
+    margin-bottom: 70px;
 }
 
 #industries ul li {
@@ -208,6 +228,12 @@ section {
     color: white;
     padding: 20px;
     border-radius: 5px;
+
+    
+    & > h1 {
+        font-size: small;
+        display: none;
+    }
 }
 
 .main-popup p,
@@ -249,22 +275,23 @@ section {
 }
 
 .create-account form .submit {
-    display: flex;
-    justify-content: center;
+    margin: 0 100px;
 }
 
 .main-popup .submit button,
-.create-account form .submit button {
+.create-account form .submit input {
     height: 40px;
     border: solid 2px rgb(70, 125, 180);
+    box-shadow: 2px 2px;
     background: transparent;
     color: white;
+    cursor: pointer;
 }
 
 .main-popup .submit button:active,
-.create-account form .submit button:active {
-    border: solid 2px black;
-    color: rgb(70, 125, 180);
+.create-account form .submit input:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
 }
 
 .main-popup h3 strong {

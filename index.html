@@ -20,6 +20,16 @@
         window.onload = function () {
             document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const address = document.getElementById('address').value.trim();
+                const contact = document.getElementById('contact-info').value.trim();
+
+                if (!name || !address || !contact) {
+                    alert("Please fill in all of the fields!");
+                    return;
+                }
+
                 // these IDs from the previous steps
                 emailjs.sendForm('service_bgkimz8', 'template_irpu8v2', this)
                     .then(() => {
@@ -39,11 +49,11 @@
 
             const name = document.getElementById('name');
             const email = document.getElementById('address');
-            const message = document.getElementById('contact-info');
+            const contact = document.getElementById('contact-info');
 
             name.value = "";
             email.value = "";
-            message.value = "";
+            contact.value = "";
         }
     </script>
 </head>
@@ -164,8 +174,9 @@
             <input type="text" id="password">
         </div>
         <div class="submit">
-            <button type="submit" id="submit">Submit</button>
+            <button type="submit" id="submit" onclick="error()">Submit</button>
         </div>
+        <h1 id="error">Account not found!</h1>
         <h3>Don't have an account? <strong onclick="createAccount()">Reach out to apply.</strong></h3>
     </div>
 
