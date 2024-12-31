@@ -11,6 +11,7 @@ function hideForm() {
 }
 
 function createAccount() {
+    document.getElementById('overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'none';
     document.getElementById('create-account').style.display = 'flex';
     document.getElementById('error').style.display = 'none';
@@ -22,5 +23,14 @@ function goBack() {
 }
 
 function error() {
+
+    const name = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!name || !password) {
+        alert("Please fill in all of the fields!");
+        return;
+    }
+
     document.getElementById('error').style.display = 'block';
 }
